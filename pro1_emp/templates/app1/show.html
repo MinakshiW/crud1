@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    <title>Show</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Employee Records</h1>
+    <table class="table table-dark table-striped-columns">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Email</th>
+                <th>Birth Date</th>
+                <th>City</th>
+                <th>Salary</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in obj %}
+            <tr>
+                <td>emp.eid</td>
+                <td>emp.ename</td>
+                <td>emp.email</td>
+                <td>emp.dob</td>
+                <td>emp.city</td>
+                <td>emp.salary</td>
+                <td>
+                    <a><button class="btn btn-success">Update</button></a>
+                    <a><button class="btn btn-warning">Delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}}
